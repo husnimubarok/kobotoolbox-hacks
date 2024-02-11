@@ -1,4 +1,5 @@
 // Berikut adalah AppScript untuk Google Sheet untuk mengambil data dari KoboToolbox tanpa perlu sharing ke publik
+// Ini digunakan sebagai alternative manual dari add-on seperti https://mixedanalytics.com/knowledge-base/import-kobotoolbox-data-to-google-sheets/ 
 // spreadsheet Anda harus memiliki lembar yang bernama "Data"
 // namun, Anda dapat mengganti "Data" dengan nama lain
 // jangan lupa untuk mengganti "Data" getSheetByName("Data")
@@ -49,7 +50,8 @@ function getData() {
   let csvContent = response.getContentText(); // Dapatkan konten teks dari respons
   csvContent = csvContent.replace(/;/g, ','); // ganti titik koma (;) dengan koma (,)
   const csv = Utilities.parseCsv(csvContent); // Analisis konten CSV
-  SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Raw").getRange(1, 1, csv.length, csv[0].length).setValues(csv); // 
-}
+  SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Data").getRange(1, 1, csv.length, csv[0].length).setValues(csv); 
+};
 
-
+// copy script di atas ke Extensions>App Script dan sesuaikan isinya!
+// jalankan script untuk memulai mengambil data dari server kobo
