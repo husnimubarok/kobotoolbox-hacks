@@ -32,11 +32,11 @@ function getKeys() {
 
 // pastikan Kamu generate CSV dari halaman unduhan terlebih dahulu
 // urlnya seperti ini
-// "https://kf.kobotoolbox.org/api/v2/assets/{uid}/export-settings/{export-settings-id}/data.csv"
-// cocokkan uid dan export-settings-id
-// yyy -> uid
-// zzz -> export-settings-id
-// temukan url dari https://kf.kobotoolbox.org/api/v2/assets/{uid}
+// "https://kf.kobotoolbox.org/api/v2/assets/{asset_uid}/export-settings/{setting_uid}/data.csv"
+// cocokkan asset_uid dan setting_uid
+// yyy -> asset_uid
+// zzz -> setting_uid
+// temukan url dari https://kf.kobotoolbox.org/api/v2/assets/{asset_uid}
 
 function getData() {
   getKeys(); // Ini dimaksudkan untuk memuat kunci, tapi tidak perlu dipanggil setiap kali jika kunci sudah diatur.
